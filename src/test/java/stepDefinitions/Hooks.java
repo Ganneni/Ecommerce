@@ -34,7 +34,7 @@ public class Hooks extends TestBase {
     public void openBrowser(Scenario s) throws MalformedURLException {
 		
 	    	
-	    	driver = initializeDriver("firefox");
+	    	driver = initializeDriver();
 		    driver.manage().window().maximize();
 	    	driver.manage().deleteAllCookies();
 	    	driver.manage().window().maximize();

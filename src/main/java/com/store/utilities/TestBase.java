@@ -16,18 +16,18 @@ public class TestBase {
     private WebDriver driver;
 	private String executionEnv = System.getProperty("type");
 	
-	public WebDriver initializeDriver(String sBrowser){
-		if(sBrowser.equalsIgnoreCase("Firefox")){
-			driver = new FirefoxDriver();
-		}else if(sBrowser.equalsIgnoreCase("Chrome")){
-			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\main\\resources\\BrowserDrivers\\chromedriver.exe");
-			driver = new ChromeDriver();
-		}else if(sBrowser.equalsIgnoreCase("IE")){
-			System.setProperty("webdriver.ie.driver",System.getProperty("user.dir")+"\\src\\main\\resources\\BrowserDrivers\\IEDriverServer.exe");
-			driver = new InternetExplorerDriver();
-		}
+	public WebDriver initializeDriver(){
+//		if(sBrowser.equalsIgnoreCase("Firefox")){
+//			driver = new FirefoxDriver();
+//		}else if(sBrowser.equalsIgnoreCase("Chrome")){
+//			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\main\\resources\\BrowserDrivers\\chromedriver.exe");
+//			driver = new ChromeDriver();
+//		}else if(sBrowser.equalsIgnoreCase("IE")){
+//			System.setProperty("webdriver.ie.driver",System.getProperty("user.dir")+"\\src\\main\\resources\\BrowserDrivers\\IEDriverServer.exe");
+//			driver = new InternetExplorerDriver();
+//		}
 		
-		/*if(executionEnv.equals("Grid"))
+		if(executionEnv != null && executionEnv.equals("Grid"))
 		{
 			DesiredCapabilities dc= null;
 			String browserName = System.getProperty("browser");
@@ -47,7 +47,7 @@ public class TestBase {
 			{
 				e.printStackTrace();
 			}
-		}*/
+		}
 		return driver;
 	}
 
